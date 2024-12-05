@@ -4,13 +4,14 @@
   "description": "Mongo Database for Inventory Management System",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon src/index.js",
-    "start":"node src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "mongoose": "^8.8.3"
   },
