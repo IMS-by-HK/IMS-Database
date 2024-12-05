@@ -5,3 +5,4 @@ Initalising:
 - npm init -y
 - npm install mongoose express
 - npm install --save-dev nodemon
+- npm install dotenv
