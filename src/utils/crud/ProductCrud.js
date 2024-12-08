@@ -1,4 +1,5 @@
 // Provide CRUD functions for the ProductModel 
+const { query } = require("express");
 const { ProductModel } = require("../../models/ProductModel");
 
 async function createProduct (item, price, quantity, category, description = null) {
@@ -13,12 +14,14 @@ async function createProduct (item, price, quantity, category, description = nul
     return result;
 }
 
-async function findOneProduct () {
+async function findOneProduct (query) {
+    let result = await ProductModel.findOne(query);
 
+    return result;
 }
 
-async function findManyProducts () {
-
+async function findManyProducts (query) {
+    let result = await ProductModel.find(query);
 }
 
 async function updateOneProduct () {
