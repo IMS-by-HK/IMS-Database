@@ -19,7 +19,3 @@ dbConnect().then(() => {
     console.log("Connected to DB, seeding now!");
     seed();
 })
-
-// seed();
-
-// await createProduct();

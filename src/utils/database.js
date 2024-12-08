@@ -10,11 +10,15 @@ async function dbConnect(){
 }
 
 
-async function dbDisconnect() {
+async function dbDisconnect(){
     // Graceful disconnect from MongoDB
     await mongoose.connection.close();
 }
 
+async function dbDrop(){
+    await mongoose.connection.db.dropDatabase();
+}
+
 module.exports = {
-	dbConnect, dbDisconnect
+	dbConnect, dbDisconnect, dbDrop
 }
