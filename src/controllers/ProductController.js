@@ -16,6 +16,23 @@ router.get("/search", async (request, response) => {
 		data: result
     }); 
 });
+
+router.get("/query", async (request, response) => {
+	// get the query from the request.body
+	console.log(request.body.query);
+	
+	let query = request.body.query;
+
+
+	// use the query in a Post CRUD function 
+	let result = await findOneProduct(query);
+
+	// return the result 
+	response.json({
+		data: result
+	});
+});
+
 // find many route 
 
 // get all products
