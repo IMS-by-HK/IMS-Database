@@ -13,13 +13,26 @@ async function seed () {
         "2.00",                 // price
         "100",                  // qty
         "Example category",     // category
-        "Example description",  // desc
+        // "Example description",  // desc
+        [
+            {
+                languageCode: "en",
+                description: "Example description"
+            }
+        ],
         newUser.id
     );
 
-    // let resultFindOne = await findOneProduct({item: "Example Product"});
 
-    // console.log(resultFindOne);
+    let resultFindOne = await findOneProduct(
+        {
+            item: "Example Product",
+            "description.languageCode": "en",
+            "description.description": "Example description"
+        }
+    );
+
+    console.log(resultFindOne);
 
 
 
