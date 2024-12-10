@@ -19,9 +19,9 @@ Features:
 
 ---
 Techstack:
-Express
-Mongoose
-CloudAtlasDB
-[IMS trello board](https://trello.com/b/RkNm85hb)
-GitHub
-Bruno
+- Express
+- Mongoose/MongoDB
+- CloudAtlasDB
+- [IMS trello board](https://trello.com/b/RkNm85hb)
+- GitHub
+- Bruno
