@@ -1,11 +1,21 @@
 const { createProduct, findOneProduct } = require("./crud/ProductCrud");
+const { createUser } = require("./crud/UserCrud");
 const { dbConnect, dbDisconnect } = require("./database");
 
 require("dotenv").config();
 
 async function seed () {
 
-    await createProduct("Example product", "2.00", "100", "Example category", "Example description");
+    let newUser = await createUser("Person", "person@email.com");
+
+    await createProduct(
+        "Example product",      // item
+        "2.00",                 // price
+        "100",                  // qty
+        "Example category",     // category
+        "Example description",  // desc
+        newUser.id
+    );
 
     // let resultFindOne = await findOneProduct({item: "Example Product"});
 
