@@ -3,7 +3,7 @@ const { dbConnect, dbDisconnect } = require("./database");
 
 async function seed () {
 
-    await createProduct("Example Product", "2.00", "100", "Example Category", "Example description");
+    await createProduct("Example product", "2.00", "100", "Example category", "Example description");
 
     // let resultFindOne = await findOneProduct({item: "Example Product"});
 
