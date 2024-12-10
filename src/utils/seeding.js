@@ -1,11 +1,13 @@
-const { createProduct } = require("./crud/ProductCrud");
+const { createProduct, findOneProduct } = require("./crud/ProductCrud");
 const { dbConnect, dbDisconnect } = require("./database");
 
 async function seed () {
 
     await createProduct("Example Product", "2.00", "100", "Example Category", "Example description");
 
+    // let resultFindOne = await findOneProduct({item: "Example Product"});
 
+    // console.log(resultFindOne);
 
 
 
