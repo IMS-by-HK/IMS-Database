@@ -1,6 +1,8 @@
 const { createProduct, findOneProduct } = require("./crud/ProductCrud");
 const { dbConnect, dbDisconnect } = require("./database");
 
+require("dotenv").config();
+
 async function seed () {
 
     await createProduct("Example product", "2.00", "100", "Example category", "Example description");

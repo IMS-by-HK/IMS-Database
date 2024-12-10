@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const { ProductModel } = require("../models/ProductModel");
 
+require("dotenv").config();
+
 // Function to connect to whatever DB our environment variable says to connect to 
 async function dbConnect(){
     console.log(process.env.DATABASE_URL);
