@@ -22,7 +22,9 @@ app.get("/", (request, response) => {
 	});
 });
 
-
+// Import router and tell app to use router
+const ProductController = require("./controllers/ProductController.js");
+app.use("/products", ProductController);
 
 // Server app configuration is finished by this point 
 // Export the app so that other files can control when the server
