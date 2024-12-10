@@ -11,8 +11,11 @@ const router = express.Router();
 router.get("/search", async (request, response) => {
     console.log("Searching for product: " + request);
     let result = await findOneProduct();
-}); 
-
+    console.log("Found post with data of: " + JSON.stringify(result));
+	response.json({
+		data: result
+    }); 
+});
 // find many route 
 
 // get all products
