@@ -10,14 +10,32 @@ Initalising/dependencies installed:
 - npm install --save-dev nodemon
 - npm install dotenv
 
+
 ----
-Features:
+Functionality:
 - Localized product descriptions
     - set to english
 - Product model, schema & controller
 - UserModel & Schema
 
+CRUD/Routes:
+- Get all products (url endpoint?)
+- Find one product (url endpoint?)
+- Find by name or ID & update (/products/update) - need to implement
+- Find by name or ID & update (/products/delete) - need to implment
+
 ---
+API endpoints:
+- GET: /search
+- GET: /query
+- PATCH: /update
+
+To do:
+PATCH: /updateMany?
+DELETE: 
+DELETE:
+
+
 Techstack:
 - Express
 - Mongoose/MongoDB
