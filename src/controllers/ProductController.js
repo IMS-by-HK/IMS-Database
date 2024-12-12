@@ -2,13 +2,13 @@ const express = require("express");
 
 const { ProductModel } = require("../models/ProductModel");
 const { findOneProduct, findManyProducts } = require("../utils/crud/ProductCrud");
-const { updateOneProduct, updateManyProducts } = require("../utils/crud/ProductCrud")
+
 
 const router = express.Router();
 
 // create route 
 
-// find one route
+// Find One Product route
 router.get("/search", async (request, response) => {
     console.log("Searching for product: " + request);
     let result = await findOneProduct();
@@ -34,9 +34,9 @@ router.get("/query", async (request, response) => {
 	});
 });
 
-// find many route 
+// Find many products route
 
-// get all products
+// Get All Products
 router.get("/all", async (request, response) => {
 
 	let result = await findManyProducts({});
@@ -47,57 +47,6 @@ router.get("/all", async (request, response) => {
 });
 
 
-// // Update one product
-// router.put("/update", async (request, response) => {
-//     const { query, updateData } = request.body;
-
-//     try {
-//         const result = await updateOneProduct(query, updateData);
-//         response.json({ success: true, message: "Product updated successfully", data: result });
-//     } catch (error) {
-//         console.error("Error updating product:", error);
-//         response.status(500).json({ success: false, message: "Error updating product", error });
-//     }
-// });
-
-// // Update many products
-// router.put("/updateMany", async (request, response) => {
-//     const { query, updateData } = request.body;
-
-//     try {
-//         const result = await updateManyProducts(query, updateData);
-//         response.json({ success: true, message: "Products updated successfully", data: result });
-//     } catch (error) {
-//         console.error("Error updating products:", error);
-//         response.status(500).json({ success: false, message: "Error updating products", error });
-//     }
-// });
-
-// Partially update one product
-router.patch("/update", async (request, response) => {
-    const { query, updateData } = request.body;
-
-    try {
-        const result = await updateOneProduct(query, updateData);
-        response.json({ success: true, message: "Product updated successfully", data: result });
-    } catch (error) {
-        console.error("Error updating product:", error);
-        response.status(500).json({ success: false, message: "Error updating product", error });
-    }
-});
-
-// Partially update many products
-router.patch("/updateMany", async (request, response) => {
-    const { query, updateData } = request.body;
-
-    try {
-        const result = await updateManyProducts(query, updateData);
-        response.json({ success: true, message: "Products updated successfully", data: result });
-    } catch (error) {
-        console.error("Error updating products:", error);
-        response.status(500).json({ success: false, message: "Error updating products", error });
-    }
-});
 
 
 
