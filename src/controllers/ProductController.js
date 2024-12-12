@@ -6,7 +6,8 @@ const { findOneProduct, findManyProducts } = require("../utils/crud/ProductCrud"
 
 const router = express.Router();
 
-// create route 
+// Create new product route
+
 
 // Find One Product route
 router.get("/search", async (request, response) => {
@@ -123,5 +124,7 @@ router.patch("/update", async (req, res) => {
         });
     }
 });
+
+// Delete product by name or ID
 
 module.exports = router;
