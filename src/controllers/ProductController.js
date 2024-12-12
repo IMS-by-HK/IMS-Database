@@ -99,4 +99,80 @@ router.patch("/updateMany", async (request, response) => {
     }
 });
 
+
+
+
+// Find Product by Item or ID
+router.get("/find", async (req, res) => {
+    const { id, item } = req.query; // Get id or item from the query params
+
+    try {
+        let product;
+        if (id) {
+            // Find by ID
+            product = await Product.findById(id);
+        } else if (item) {
+            // Find by item name
+            product = await Product.findOne({ item: item });
+        }
+
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found",
+            });
+        }
+
+        res.json({
+            success: true,
+            data: product,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Error finding product",
+            error: error.message,
+        });
+    }
+});
+
+// Update Product by Name or ID
+router.patch("/update", async (req, res) => {
+	// Expects query and updateData in the request body
+    const { query, updateData } = req.body; 
+
+    try {
+        let product;
+
+        // Find product by either ID or item
+        if (query.id) {
+            product = await Product.findByIdAndUpdate(query.id, updateData, { new: true });
+        } else if (query.item) {
+            product = await Product.findOneAndUpdate({ item: query.item }, updateData, { new: true });
+        }
+		// if product is not found message
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found to update",
+            });
+        }
+		// if product found and updated message
+        res.json({
+            success: true,
+            message: "Product updated successfully",
+            data: product,
+        });
+	// Error message	
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Error updating product",
+            error: error.message,
+        });
+    }
+});
+
 module.exports = router;
