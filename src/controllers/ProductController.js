@@ -126,5 +126,39 @@ router.patch("/update", async (req, res) => {
 });
 
 // Delete product by name or ID
+router.delete("/delete", async (req, res) => {
+    const { id, item } = req.query; // Get id or item from the query params
+
+    try {
+        let product;
+
+        if (id) {
+            // Find product by ID
+            product = await Product.findByIdAndDelete(id);
+        } else if (item) {
+            // Find product by item name
+            product = await Product.findOneAndDelete({ item: item });
+        }
+
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found to delete",
+            });
+        }
+
+        res.json({
+            success: true,
+            message: "Product deleted successfully",
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Error deleting product",
+            error: error.message,
+        });
+    }
+});
 
 module.exports = router;
