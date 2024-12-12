@@ -1,10 +1,10 @@
 # IMS-Database
 Mongo Database for Inventory Management System
 
-Command to drop and seed database: /br
+Command to drop and seed database:
 'npm run db:drop-and-seed'
 
-Command to run server: /br
+Command to run server:
 'npm run dev'
 'npm run start'
 
