@@ -1,7 +1,12 @@
 # IMS-Database
 Mongo Database for Inventory Management System
 
+Command to drop and seed database:
+'npm run db:drop-and-seed'
 
+Command to run server:
+'npm run dev'
+'npm run start'
 
 ---
 Initalising/dependencies installed:
@@ -9,7 +14,6 @@ Initalising/dependencies installed:
 - npm install mongoose express
 - npm install --save-dev nodemon
 - npm install dotenv
-
 
 ----
 Functionality:
@@ -19,7 +23,7 @@ Functionality:
 - UserModel & Schema
 
 CRUD/Routes:
-- Get all products (url endpoint?)
+- Get all products (/search)
 - Find one product (url endpoint?)
 - Find by name or ID & update (/products/update) - need to implement
 - Find by name or ID & update (/products/delete) - need to implment
@@ -32,10 +36,10 @@ API endpoints:
 
 To do:
 PATCH: /updateMany?
-DELETE: 
-DELETE:
+DELETE: ?
 
 
+---
 Techstack:
 - Express
 - Mongoose/MongoDB
@@ -43,3 +47,4 @@ Techstack:
 - [IMS trello board](https://trello.com/b/RkNm85hb)
 - GitHub
 - Bruno
+- Google
