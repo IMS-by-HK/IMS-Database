@@ -2,18 +2,18 @@
 Mongo Database for Inventory Management System
 
 Command to drop and seed database:\
-'npm run db:drop-and-seed'
+`npm run db:drop-and-seed`
 
 Command to run server:\
-'npm run dev'
-'npm run start'
+`npm run dev`
+`npm run start`
 
 ---
 Initalising/dependencies installed:
-- npm init -y
-- npm install mongoose express
-- npm install --save-dev nodemon
-- npm install dotenv
+- `npm init -y`
+- `npm install mongoose express`
+- `npm install --save-dev nodemon`
+- `npm install dotenv`
 
 ----
 Functionality:
