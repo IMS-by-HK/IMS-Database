@@ -6,7 +6,7 @@ Command to drop and seed database:\
 
 Command to run server:\
 `npm run dev`\
-`npm run start`\
+`npm run start`
 
 ---
 Initalising/dependencies installed:
