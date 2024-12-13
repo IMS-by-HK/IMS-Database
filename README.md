@@ -17,8 +17,6 @@ Initalising/dependencies installed:
 
 ----
 Functionality:
-- Localized product descriptions
-    - set to english
 - Product model, schema & controller
 - UserModel & Schema
 

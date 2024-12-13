@@ -1,7 +1,7 @@
 const express = require("express");
 
 const { ProductModel } = require("../models/ProductModel");
-const { findOneProduct, findManyProducts } = require("../utils/crud/ProductCrud");
+const { findOneProduct, findManyProducts, updateOneProduct, deleteOneProduct } = require("../utils/crud/ProductCrud");
 
 
 const router = express.Router();
@@ -87,20 +87,21 @@ router.get("/find", async (req, res) => {
     }
 });
 
-// Update Product by Name or ID
-router.patch("/update", async (req, res) => {
-	// Expects query and updateData in the request body
-    const { query, updateData } = req.body; 
+// Update Product by ID
+router.patch("/:id", async (req, res) => {
+	// Expects updateData in the request body
+    const updateData  = req.body; 
 
     try {
         let product;
-
+		const id = req.params.id;
         // Find product by either ID or item
-        if (query.id) {
-            product = await Product.findByIdAndUpdate(query.id, updateData, { new: true });
-        } else if (query.item) {
-            product = await Product.findOneAndUpdate({ item: query.item }, updateData, { new: true });
-        }
+        if (id) {
+            // product = await Product.findByIdAndUpdate(req.params.id, updateData, { new: true });
+			product = await updateOneProduct(id, updateData);
+        } //else if (query.item) {
+        //     product = await Product.findOneAndUpdate({ item: query.item }, updateData, { new: true });
+        // }
 		// if product is not found message
         if (!product) {
             return res.status(404).json({
@@ -125,20 +126,22 @@ router.patch("/update", async (req, res) => {
     }
 });
 
-// Delete product by name or ID
-router.delete("/delete", async (req, res) => {
-    const { id, item } = req.query; // Get id or item from the query params
+// Delete product by ID
+router.delete("/:id", async (req, res) => {
 
+//router.delete("/delete", async (req, res) => {
+    //const { id, item } = req.query; // Get id or item from the query params
+	const { id } = req.params;
     try {
         let product;
 
         if (id) {
             // Find product by ID
-            product = await Product.findByIdAndDelete(id);
-        } else if (item) {
-            // Find product by item name
-            product = await Product.findOneAndDelete({ item: item });
-        }
+            product = await deleteOneProduct(id);
+        } // else if (item) {
+        //     // Find product by item name
+        //     product = await Product.findOneAndDelete({ item: item });
+        // }
 
         if (!product) {
             return res.status(404).json({
