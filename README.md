@@ -28,13 +28,15 @@ CRUD/Routes:
 
 ---
 API endpoints:
-- GET: /search
-- GET: /query
-- PATCH: /update
+- GET: /products/search 
+- GET: /products/all - get all products
+- GET: /products/:id - get product by id
+- GET: /products/category/:category - get products by category
+- POST: /products/create - create product
+- PATCH: /products/:id - update product
+- DELETE: /products/:id - delete product by id
+See Bruno file for example
 
-To do:
-PATCH: /updateMany?
-DELETE: ?
 
 
 ---

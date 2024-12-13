@@ -1,46 +1,35 @@
-// // Provide CRUD functions for the UserModel 
-// // UserModel to be changed to admin only later on: WIP
-// const { query } = require("express");
-// const { UserModel } = require("../../models/UserModel");
+// Provide CRUD functions for the UserModel 
+// UserModel to be changed to admin only later on: WIP
+const { query } = require("express");
+const { UserModel } = require("../../models/UserModel");
 
-// async function createUser (username, email) {
-//     let result = await UserModel.create({
-//         username: username,
-//         email: email
-// });
+async function createUser (username, email) {
+    let result = await UserModel.create({
+        username: username,
+        password: password
+    });
 
-//     return result;
-// }
+    return result;
+}
 
-// async function findOneUser (query) {
-//     let result = await UserModel.findOne(query);
+async function findOneUser (query) {
+    let result = await UserModel.findOne(query);
 
-//     return result;
-// }
+    return result;
+}
 
-// async function findManyUsers (query) {
-//     let result = await UserModel.find(query);
-// }
 
-// async function updateOneUser () {
+async function updateOneUser () {
 
-// }
+}
 
-// async function updateManyUsers () {
+async function deleteOneUser () {
 
-// }
+}
 
-// async function deleteOneUser () {
-
-// }
-
-// async function deleteManyUsers () {
-
-// }
-
-// module.exports = {
-//     createUser,
-//     findOneUser, findManyUsers,
-//     updateOneUser, updateManyUsers,
-//     deleteOneUser, deleteManyUsers
-// }
+module.exports = {
+    createUser,
+    findOneUser,
+    updateOneUser,
+    deleteOneUser,
+}

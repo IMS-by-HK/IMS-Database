@@ -3,14 +3,14 @@ const { query } = require("express");
 const { ProductModel } = require("../../models/ProductModel");
 
 // Create new product
-async function createProduct (item, price, quantity, category, description = null) {
-    let result = await ProductModel.create({
-        item: item,
-        price: price,
-        quantity: quantity,
-        category: category,
-        description: description
-    });
+async function createProduct (product) {
+    //name, price, quantity, category, description = null) {
+    let result = await ProductModel.create(product);
+        // name: name,
+        // price: price,
+        // quantity: quantity,
+        // category: category,
+        // description: description
 
     return result;
 }
@@ -24,8 +24,8 @@ async function findOneProduct (query) {
 }
 
 // Find many products
-async function findManyProducts (query) {
-    let result = await ProductModel.find(query);
+async function findManyProducts (query, limit) {
+    return result = await ProductModel.find(query).limit(limit);
 }
 
 // Update one product
