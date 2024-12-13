@@ -1,50 +1,41 @@
 const express = require("express");
 
 const { ProductModel } = require("../models/ProductModel");
-const { findOneProduct, findManyProducts, updateOneProduct, deleteOneProduct } = require("../utils/crud/ProductCrud");
+const { createProduct, findOneProduct, findManyProducts, updateOneProduct, deleteOneProduct } = require("../utils/crud/ProductCrud");
 
 
 const router = express.Router();
 
 // Create new product route
+router.post("/create", async (request, response) => {
+	console.log("Creating product: " + JSON.stringify(request.body));
+    let result = await createProduct(request.body);
+	response.json(result); 
+});
 
-
-// Find One Product route
+// Find many products search route
 router.get("/search", async (request, response) => {
-    console.log("Searching for product: " + request);
-    let result = await findOneProduct();
+    console.log("Searching for product: " + JSON.stringify(request.body));
+    let result = await findManyProducts(request.body.query, request.body.limit || 100);
     console.log("Found post with data of: " + JSON.stringify(result));
-	response.json({
-		data: result
-    }); 
+	response.json(result); 
 });
 
-router.get("/query", async (request, response) => {
-	// get the query from the request.body
-	console.log(request.body.query);
-	
-	let query = request.body.query;
-
-
-	// use the query in a Post CRUD function 
-	let result = await findOneProduct(query);
-
-	// return the result 
-	response.json({
-		data: result
-	});
+// Get all by category
+router.get("/category/:category", async (req, response) => {
+    console.log("Searching for category: " + JSON.stringify(req.params.category));
+    let result = await findManyProducts({ category: req.params.category });
+    console.log("Found post with data of: " + JSON.stringify(result));
+	response.json(result); 
 });
 
-// Find many products route
 
 // Get All Products
 router.get("/all", async (request, response) => {
 
-	let result = await findManyProducts({});
+	let result = await findManyProducts();
 
-	response.json({
-		data: result
-	});
+	response.json(result);
 });
 
 
@@ -85,6 +76,15 @@ router.get("/find", async (req, res) => {
             error: error.message,
         });
     }
+});
+
+
+// Get Product by ID
+router.get("/:id", async (request, response) => {
+
+	let result = await findOneProduct({_id: request.params.id});
+
+	response.json(result);
 });
 
 // Update Product by ID
@@ -129,8 +129,6 @@ router.patch("/:id", async (req, res) => {
 // Delete product by ID
 router.delete("/:id", async (req, res) => {
 
-//router.delete("/delete", async (req, res) => {
-    //const { id, item } = req.query; // Get id or item from the query params
 	const { id } = req.params;
     try {
         let product;

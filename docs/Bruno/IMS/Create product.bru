@@ -1,0 +1,19 @@
+meta {
+  name: Create product
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/products/create
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "name": "Mango",
+      "category": "Fruit",
+      "description": "Mangoes"
+   }
+}

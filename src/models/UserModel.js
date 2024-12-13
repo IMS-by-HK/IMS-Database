@@ -9,14 +9,11 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     unique: true
   },
-  email: {
-		type: String,
-		required: true,
-		minLength: 3,
-		trim: true,
-		unique: true,
-		match: /.+\@.+\..+/
-	}
+  password: {
+    type: String,
+    required: true,
+    minLength: 6
+  }
 });
 
 // 2. Make a model based on the schema
