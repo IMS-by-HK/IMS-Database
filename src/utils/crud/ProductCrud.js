@@ -10,7 +10,7 @@ async function createProduct (item, price, quantity, category, description = nul
         quantity: quantity,
         category: category,
         description: description
-});
+    });
 
     return result;
 }
@@ -29,9 +29,8 @@ async function findManyProducts (query) {
 }
 
 // Update one product
-async function updateOneProduct(query, updateData) {
-    let result = await ProductModel.updateOne(query, updateData);
-    return result;
+async function updateOneProduct(id, updateData) {
+    return result = await ProductModel.updateOne({_id: id}, updateData);
 }
 
 // Update many products
@@ -39,9 +38,8 @@ async function updateManyProducts(query, updateData) {
     let result = await ProductModel.updateMany(query, updateData);
     return result;
 }
-
-async function deleteOneProduct () {
-
+async function deleteOneProduct (id) {
+    return result = await ProductModel.findByIdAndDelete(id);
 }
 
 async function deleteManyProducts () {

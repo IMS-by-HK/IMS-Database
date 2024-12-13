@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { LocalizedDescriptionSchema } = require('./LocalizedContent');
 
 // 1. Make a schema
 const ProductSchema = new mongoose.Schema({
@@ -32,11 +31,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // description: {
-  //   type: String,
-  //   trim: true,
-  // },
-  description: [LocalizedDescriptionSchema],
+  description: {
+    type: String,
+    trim: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
