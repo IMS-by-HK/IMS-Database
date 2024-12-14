@@ -1,10 +1,13 @@
 # IMS-Database
 Mongo Database for Inventory Management System
 
-Command to drop and seed database:\
+To seed database and start server:
+`npm run start:seed`
+
+To drop and seed database:\
 `npm run db:drop-and-seed`
 
-Command to run server:\
+To run server:\
 `npm run dev`\
 `npm run start`
 
@@ -18,13 +21,10 @@ Initalising/dependencies installed:
 ----
 Functionality:
 - Product model, schema & controller
-- UserModel & Schema
+    - Add, Update & Delete
+- UserModel & Schema - need to finish
 
-CRUD/Routes:
-- Get all products (/search)
-- Find one product (url endpoint?)
-- Find by name or ID & update (/products/update) - need to implement
-- Find by name or ID & update (/products/delete) - need to implment
+
 
 ---
 API endpoints:
