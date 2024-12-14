@@ -9,8 +9,19 @@ const router = express.Router();
 // Create new product route
 router.post("/create", async (request, response) => {
 	console.log("Creating product: " + JSON.stringify(request.body));
-    let result = await createProduct(request.body);
-	response.json(result); 
+	try {
+    	let result = await createProduct(request.body);
+		response.json(result); 
+	}
+	catch (error) {
+			console.error(error);
+			response.status(400).json({
+				success: false,
+				message: "Error creating product",
+				error: error.message,
+			});
+			//response.status(400).json(error);
+	}
 });
 
 // Find many products search route

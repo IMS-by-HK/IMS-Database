@@ -12,21 +12,12 @@ const ProductSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true,
-    min: 0, 
-    default: 1
-    // validate: {
-    //   // Validator to ensure price has at most 2 decimal places
-    //   validator: function (value) {
-    //     return /^\d+(\.\d{1,2})?$/.test(value.toString());
-    //   },
-    //   message: 'Price must be a positive number with up to two decimal places.',
-    // },
+    min: [0, 'Price must not be negative.']
   },
   quantity: {
     type: Number,
     required: true,
-    min: 0,
-    default: 100
+    min: [0, 'Quantity must not be negative.']
   },
   category: {
     type: String,
