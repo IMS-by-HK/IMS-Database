@@ -3,11 +3,8 @@
 const { query } = require("express");
 const { UserModel } = require("../../models/UserModel");
 
-async function createUser (username, email) {
-    let result = await UserModel.create({
-        username: username,
-        password: password
-    });
+async function createUser (user) {
+    let result = await UserModel.create(user);
 
     return result;
 }

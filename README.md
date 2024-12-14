@@ -1,6 +1,15 @@
 # IMS-Database
 Mongo Database/Backend for Inventory Management System
 
+To start the MongoDB server:\
+Mac: `brew services start mongodb-community`\
+WSL: `sudo service mongod start`
+
+Check status: \
+Mac: `brew services list`\
+WSL: `sudo service mongod start`
+
+
 To seed database and start server:\
 `npm run start:seed`
 
@@ -12,13 +21,19 @@ To run server:\
 `npm run start`
 
 ---
-Initalising/dependencies installed:
-- `npm init -y`
-- `npm install mongoose express`
+Initalising/dependencies/devdependencies installed:
+- Node.js:
+    - `npm init -y`
+- Mongoose & Express:
+    - `npm install mongoose express`
+- Nodemon:
 - `npm install --save-dev nodemon`
-- `npm install dotenv`
-- `npm i --save-dev jest`
-
+- Virtual environment
+    - `npm install dotenv`
+- Testing:
+    - `npm i --save-dev jest`
+- Authentication & Password hashing:
+    - `npm install jsonwebtoken helmet bcrypt`
 ----
 
 
@@ -28,9 +43,46 @@ Functionality:
     - Requirement fields for name, price, quantity & category
 - UserModel & Schema
     - username & password - need to hash password!!
+----
+WORKING ON IN THIS BRANCH:\
+Authenticaion:\
+Models:\
+- User model
+    - username
+    - password
+    - Roles by ID
+- Role model
+    - name
+
+Routes: 
+- /signup
+    - POST 
+    - username, password
+    - creates a new user
+    - returns a JWT
+- /login
+    - POST 
+    - username, password
+    - chcks provided data against database
+    - returns a JWT
+- localhost:3000/users/:userID
+    - GET
+    - requires a valid JWT header
+    - gets one user and returns it
+- localhost:3000/users/refresh
+    - POST
+    - requires a valid JWT header
+    - checks a JWT and provides a new one if it's valid
+    - returns a JWT
+
+Auth API endpoints:
+- POST: /signup
+- POST: /login
+- GET: /users/:userID
+- POST: /users/refresh
 
 ---
-API endpoints:
+Product API endpoints:
 - GET: /products/search 
 - GET: /products/all - get all products
 - GET: /products/:id - get product by id

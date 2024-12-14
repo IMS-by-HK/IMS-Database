@@ -8,6 +8,9 @@
 // - connections to file storage 
 
 const express = require("express");
+
+
+
 const app = express();
 
 // Server app configuration goes here
@@ -25,8 +28,15 @@ app.get("/", (request, response) => {
 });
 
 // Import router and tell app to use router
+
+// User
+const UserController = require("./controllers/UserController.js");
+app.use("/users", UserController);
+// Products
 const ProductController = require("./controllers/ProductController.js");
 app.use("/products", ProductController);
+
+
 
 // Server app configuration is finished by this point 
 // Export the app so that other files can control when the server
