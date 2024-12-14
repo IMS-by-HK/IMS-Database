@@ -2,7 +2,7 @@ const express = require("express");
 
 const { UserModel } = require("../models/UserModel");
 const { createUser } = require("../utils/crud/UserCrud");
-const { generateJWT, validateUserAuth } = require("../functions/jwtFunctions");
+const { generateJWT } = require("../functions/jwtFunctions");
 
 
 const router = express.Router();

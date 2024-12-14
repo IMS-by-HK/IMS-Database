@@ -2,6 +2,7 @@ const express = require("express");
 
 const { ProductModel } = require("../models/ProductModel");
 const { createProduct, findOneProduct, findManyProducts, updateOneProduct, deleteOneProduct } = require("../utils/crud/ProductCrud");
+const { validateUserAuth } = require("../functions/jwtFunctions");
 
 
 const router = express.Router();
@@ -138,7 +139,7 @@ router.patch("/:id", async (req, res) => {
 });
 
 // Delete product by ID
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateUserAuth, async (req, res) => {
 
 	const { id } = req.params;
     try {
