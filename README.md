@@ -2,6 +2,9 @@
 Mongo Database/Backend for Inventory Management System by Hayden & Kate
 Built using Mongoose/MongoDB, ExpressJS, & Nodemon
 
+Deployed on Render @: 
+[IMS-Backend URL](https://ims-backend-2qfp.onrender.com/)
+
 -----
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt`
