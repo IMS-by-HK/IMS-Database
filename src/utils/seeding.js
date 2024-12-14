@@ -38,7 +38,9 @@ async function seed () {
         description: "Individual Lady Fingers"  // desc
     });
     await createProduct({
-        name: "White Chocolate",      // name
+        name: "White Chocolate",
+        price: 2.99,
+        quantity: "10",      // name
         category: "Confectionary",     // category
         description: "White chocolate bar 200g"  // desc
     });

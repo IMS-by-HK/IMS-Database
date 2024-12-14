@@ -5,13 +5,13 @@ const { ProductModel } = require("../../models/ProductModel");
 // Create new product
 async function createProduct (product) {
     //name, price, quantity, category, description = null) {
+    
     let result = await ProductModel.create(product);
         // name: name,
         // price: price,
         // quantity: quantity,
         // category: category,
         // description: description
-
     return result;
 }
 
