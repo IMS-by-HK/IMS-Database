@@ -40,7 +40,13 @@ API endpoints:
 - DELETE: /products/:id - delete product by id
 See [Bruno file](/docs/Bruno/IMS/) for example
 
-
+---
+Testing:\
+Tests for validation:
+- if all product requirements are provided - success
+- if price is a negative number - fail
+- if quantity is a negative number - fail
+- if category is not provided - fail
 ---
 Techstack:
 - Express
