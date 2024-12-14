@@ -1,7 +1,7 @@
 # IMS-Database
 Mongo Database/Backend for Inventory Management System
 
-To seed database and start server:
+To seed database and start server:\
 `npm run start:seed`
 
 To drop and seed database:\
