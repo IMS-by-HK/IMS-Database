@@ -1,5 +1,5 @@
 # IMS-Database
-Mongo Database/Backend for Inventory Management System by Hayden & Kate
+Mongo Database/Backend for Inventory Management System by Hayden & Kate\
 Built using Mongoose/MongoDB, ExpressJS, & Nodemon
 
 Deployed on Render @: 
@@ -10,8 +10,8 @@ To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt`
 
 To run server:\
-`npm run dev`\
-`npm run start`
+Development mode:`npm run dev`\
+Production mode: `npm run start`
 
 To start the MongoDB server:\
 Mac: `brew services start mongodb-community`\
@@ -51,8 +51,8 @@ Functionality:
     - username & password - need to hash password!!
     - allows signup & login
 ----
-Authenticaion:\
-Models:\
+Authentication:\
+Models:
 - User model
     - username
     - password
