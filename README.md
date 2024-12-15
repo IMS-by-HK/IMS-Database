@@ -50,7 +50,8 @@ Functionality:
 - User model, schema & controller
     - username & password - password hashed
     - allows signup & login of manager & employees
-    - allows manager permissions to updat & delete
+    - allows only manager permission to update & delete
+
 ----
 Authentication:\
 Models:
@@ -95,7 +96,7 @@ Auth API endpoints:
 - POST: /login
 - GET: /users/:userID
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
-- DELETE: /users/:userID - delete user by id - must be logged in as manager to delete emoloyee
+- DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
 <!-- - POST: /users/refresh -->
 See [Bruno file](/docs/Bruno/IMS/) for example
 ---
