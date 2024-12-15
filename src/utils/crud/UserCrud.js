@@ -14,19 +14,26 @@ async function findOneUser (query) {
 
     return result;
 }
-
-
-async function updateOneUser () {
-
+// Find many Users
+async function findManyUsers (query, limit) {
+    return result = await UserModel.find(query).limit(limit);
 }
 
-async function deleteOneUser () {
-
+// Update one user
+async function updateOneUser(id, updateData) {
+    return result = await UserModel.updateOne({_id: id}, updateData);
 }
+
+// Delete one user
+async function deleteOneUser(id) {
+    return result = await UserModel.findByIdAndDelete(id);
+}
+
 
 module.exports = {
     createUser,
-    findOneUser,
+    findOneUser, 
+    findManyUsers,
     updateOneUser,
     deleteOneUser,
 }

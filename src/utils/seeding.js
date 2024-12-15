@@ -1,27 +1,29 @@
 const { createProduct, findOneProduct } = require("./crud/ProductCrud");
-// const { createUser } = require("./crud/UserCrud");
+const { createUser } = require("./crud/UserCrud");
 const { dbConnect, dbDisconnect } = require("./database");
+const bcrypt = require('bcrypt');
 
 require("dotenv").config();
 
 async function seed () {
+    const hashedPassword = await bcrypt.hash("SomePassword", 10);
 
-    // let newUser = await createUser("Person", "person@email.com");
+    await createUser({
+        username: "Manager", 
+        password: hashedPassword,
+        isManager: true
+    });
+    await createUser({
+        username: "employee1", 
+        password: hashedPassword,
+        isManager: false
+    });
+    await createUser({
+        username: "employee2", 
+        password: hashedPassword,
+        isManager: false
+    });
 
-    // await createProduct(
-    //     "Example product",      // item
-    //     "2.00",                 // price
-    //     "100",                  // qty
-    //     "Example category",     // category
-    //     // "Example description",  // desc
-    //     [
-    //         {
-    //             languageCode: "en",
-    //             description: "Example description"
-    //         }
-    //     ],
-    //     newUser.id
-    // );
 
     await createProduct({
         name: "Apple",      // name
