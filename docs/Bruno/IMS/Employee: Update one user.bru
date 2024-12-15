@@ -1,0 +1,21 @@
+meta {
+  name: Employee: Update one user
+  type: http
+  seq: 16
+}
+
+patch {
+  url: http://localhost:8080/users/675e896c341961e8f5921ca1
+  body: json
+  auth: none
+}
+
+headers {
+  jwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzVlOGEzMjc3N2IyNmVlYWM0ZjgyYTYiLCJ1c2VybmFtZSI6ImVtcGxveWVlMiIsInJvbGVzIjpudWxsLCJpYXQiOjE3MzQyNDkwMzksImV4cCI6MTczNDMzNTQzOX0.L75vGEHV7MF0eWBYWKRaiAZKxf_dgjjpVYSairlAQhE
+}
+
+body:json {
+  {
+    "username": "employee4"
+  }
+}

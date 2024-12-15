@@ -16,12 +16,12 @@ async function seed () {
     await createUser({
         username: "employee1", 
         password: hashedPassword,
-        isManager: true
+        isManager: false
     });
     await createUser({
         username: "employee2", 
         password: hashedPassword,
-        isManager: true
+        isManager: false
     });
 
 

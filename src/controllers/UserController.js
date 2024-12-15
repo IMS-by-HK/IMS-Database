@@ -3,7 +3,7 @@ const express = require("express");
 const { UserModel } = require("../models/UserModel");
 const { createUser, findOneUser, findManyUsers, updateOneUser, deleteOneUser } = require("../utils/crud/UserCrud");
 const bcrypt = require('bcrypt');
-const { generateJWT, validateUserAuth } = require("../functions/jwtFunctions");
+const { generateJWT, validateUserAuth, validateUserIsManager } = require("../functions/jwtFunctions");
 
 
 const router = express.Router();
@@ -94,7 +94,7 @@ router.get("/:id", async (request, response) => {
 });
 
 // Update User by ID
-router.patch("/:id", async (req, res) => {
+router.patch("/:id", validateUserAuth, validateUserIsManager, async (req, res) => {
 	// Expects updateData in the request body
     const updateData  = req.body; 
 
@@ -129,7 +129,7 @@ router.patch("/:id", async (req, res) => {
 });
 
 // Delete user by ID
-router.delete("/:id", validateUserAuth, async (req, res) => {
+router.delete("/:id", validateUserAuth, validateUserIsManager, async (req, res) => {
 
 	const { id } = req.params;
     try {

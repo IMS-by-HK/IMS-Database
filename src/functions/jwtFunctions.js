@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
+const { findOneUser, findManyUsers, updateOneUser, deleteOneUser } = require("../utils/crud/UserCrud");
+// ...
 
 let jwtSecretKey = process.env.JWT_SECRET_KEY;
 
@@ -46,8 +48,23 @@ async function validateUserAuth(request, response, next){
 	}
 }
 
+async function validateUserIsManager(request, response, next){
+	let userData = request.authUserData;
+	// TODO look up user using userCrud function
+	const user = await findOneUser({_id: userData.userId})
+
+	// check if user isManager
+	if (user.isManager) {
+		next();
+	} else {
+		return response.status(403).json({
+			message:"Sign in as manager to view this content!"
+		});
+	}
+}
 module.exports = {
 	generateJWT,
 	decodeJWT,
-	validateUserAuth
+	validateUserAuth,
+	validateUserIsManager
 }
