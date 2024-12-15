@@ -42,13 +42,10 @@ async function deleteOneProduct (id) {
     return result = await ProductModel.findByIdAndDelete(id);
 }
 
-async function deleteManyProducts () {
-
-}
 
 module.exports = {
     createProduct,
     findOneProduct, findManyProducts,
     updateOneProduct, updateManyProducts,
-    deleteOneProduct, deleteManyProducts
+    deleteOneProduct
 }

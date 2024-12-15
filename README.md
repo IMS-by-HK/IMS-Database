@@ -48,8 +48,9 @@ Functionality:
     - Add, Update & Delete CRUD operations
     - Requirement fields for name, price, quantity & category
 - User model, schema & controller
-    - username & password - need to hash password!!
-    - allows signup & login
+    - username & password - password hashed
+    - allows signup & login of manager & employees
+    - allows manager permissions to updat & delete
 ----
 Authentication:\
 Models:
@@ -57,6 +58,8 @@ Models:
     - username
     - password
     - Roles by ID
+        - manager
+        - employee
 - Role model
     - name
 
@@ -75,6 +78,10 @@ Routes:
     - GET
     - requires a valid JWT header
     - gets one user and returns it
+- localhost:3000/users/:userID
+    - GET
+    - requires a valid JWT header
+    - gets one user and returns it
 
 
 <!-- - localhost:3000/users/refresh?
@@ -87,8 +94,10 @@ Auth API endpoints:
 - POST: /signup
 - POST: /login
 - GET: /users/:userID
+- PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
+- DELETE: /users/:userID - delete user by id - must be logged in as manager to delete emoloyee
 <!-- - POST: /users/refresh -->
-
+See [Bruno file](/docs/Bruno/IMS/) for example
 ---
 Product API endpoints:
 - GET: /products/search 
