@@ -8,10 +8,14 @@
 // - connections to file storage 
 
 const express = require("express");
-
-
-
+const cors = require('cors');
 const app = express();
+
+app.use(cors());  // Enable CORS for all routes
+
+app.use(express.json());
+app.use(require('./controllers/UserController'));
+
 
 // Server app configuration goes here
 // middleware, routes, etc 

@@ -7,7 +7,7 @@ Deployed on Render @:
 
 -----
 To install dependencies required:\
-`npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt`
+`npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
 
 To run server:\
 Development mode:`npm run dev`\
@@ -41,6 +41,8 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm i --save-dev jest`
 - Authentication & Password hashing:
     - `npm install jsonwebtoken helmet bcrypt`
+- CORS:
+    - `npm install cors`
 ----
 
 Functionality:

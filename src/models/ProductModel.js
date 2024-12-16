@@ -35,6 +35,25 @@ const ProductSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  sku: {
+    type: Number,
+    unique: true,
+  },
+});
+
+// Pre-save middleware to generate SKU
+ProductSchema.pre('save', async function(next) {
+  if (this.isNew) { // Check if this is a new document
+    try {
+      const lastProduct = await this.constructor.findOne().sort({ sku: -1 });
+      this.sku = lastProduct ? lastProduct.sku + 1 : 1;
+      next();
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    next();
+  }
 });
 
 // 2. Make a model based on the schema
