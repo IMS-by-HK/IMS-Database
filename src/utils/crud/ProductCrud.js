@@ -12,6 +12,7 @@ async function createProduct (product) {
         // quantity: quantity,
         // category: category,
         // description: description
+        // sku: sku
     return result;
 }
 
