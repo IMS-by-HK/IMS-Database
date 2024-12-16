@@ -43,9 +43,13 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
+
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence): 
+
+
+
     npm install --save mongoose-sequence
-----
+
 
 Functionality:
 - Product model, schema & controller
