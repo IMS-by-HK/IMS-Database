@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 // 1. Make a schema
 const ProductSchema = new mongoose.Schema({
@@ -18,7 +19,7 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: [0, 'Quantity must not be negative.']
-  },
+  },,
   category: {
     type: String,
     required: true,
@@ -35,7 +36,16 @@ const ProductSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  sku: {
+    type: Number,
+    required: true,
+    unique: true,
+  }
 });
+
+// Apply auto-increment plugin to SKU
+itemSchema.plugin(AutoIncrement, {inc_field: 'sku'});
+
 
 // 2. Make a model based on the schema
 const ProductModel = mongoose.model('Product', ProductSchema);

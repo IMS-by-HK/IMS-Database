@@ -32,7 +32,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
 - Node.js:
     - `npm init -y`
 - Mongoose & Express:
-    - `npm install mongoose express`
+    - `npm install mongoose mongoose-sequence express`
 - Nodemon:
 - `npm install --save-dev nodemon`
 - Virtual environment
