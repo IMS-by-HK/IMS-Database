@@ -45,10 +45,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install cors`
 
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence): 
-
-
-
-    npm install --save mongoose-sequence
+    - `npm install --save mongoose-sequence`
 
 
 Functionality:
