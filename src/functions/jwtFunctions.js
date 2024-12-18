@@ -50,7 +50,7 @@ async function validateUserAuth(request, response, next){
 
 async function validateUserIsManager(request, response, next){
 	let userData = request.authUserData;
-	// TODO look up user using userCrud function
+	
 	const user = await findOneUser({_id: userData.userId})
 
 	// check if user isManager

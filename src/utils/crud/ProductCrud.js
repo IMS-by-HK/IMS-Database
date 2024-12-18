@@ -38,6 +38,7 @@ async function updateManyProducts(query, updateData) {
     let result = await ProductModel.updateMany(query, updateData);
     return result;
 }
+// Delete one product
 async function deleteOneProduct (id) {
     return result = await ProductModel.findByIdAndDelete(id);
 }
