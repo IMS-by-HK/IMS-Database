@@ -5,13 +5,17 @@ meta {
 }
 
 patch {
-  url: http://localhost:8080/products/675bf4409127bfdb6f4ea374
+  url: http://localhost:8080/products/67629b874167d87487113cf7
   body: json
   auth: none
 }
 
+headers {
+  jwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzYyOWI4NzQxNjdkODc0ODcxMTNjZjIiLCJ1c2VybmFtZSI6ImVtcGxveWVlMSIsInJvbGVzIjpudWxsLCJpYXQiOjE3MzQ1MTYzNDYsImV4cCI6MTczNDYwMjc0Nn0.6lYr3MSMRWOGjZSLGiZ0XiEamWJneyC95fnxUXVFToo
+}
+
 body:json {
   {
-    "description": "Apple"
+    "price": "1.50"
   }
 }

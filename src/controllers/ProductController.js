@@ -100,7 +100,7 @@ router.get("/:id", async (request, response) => {
 });
 
 // Update Product by ID
-router.patch("/:id", async (req, res) => {
+router.patch("/:id", validateUserAuth, async (req, res) => {
 	// Expects updateData in the request body
     const updateData  = req.body; 
 

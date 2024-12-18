@@ -78,7 +78,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Get All Users
-router.get("/all", async (request, response) => {
+router.get("/all", validateUserAuth, validateUserIsManager, async (request, response) => {
 
 	let result = await findManyUsers();
 
@@ -86,7 +86,7 @@ router.get("/all", async (request, response) => {
 });
 
 // Get User by ID
-router.get("/:id", async (request, response) => {
+router.get("/:id", validateUserAuth, validateUserIsManager, async (request, response) => {
 
 	let result = await findOneUser({_id: request.params.id});
 
