@@ -21,7 +21,6 @@ router.post("/create", async (request, response) => {
 				message: "Error creating product",
 				error: error.message,
 			});
-			//response.status(400).json(error);
 	}
 });
 
@@ -109,11 +108,8 @@ router.patch("/:id", validateUserAuth, async (req, res) => {
 		const id = req.params.id;
         // Find product by either ID or item
         if (id) {
-            // product = await Product.findByIdAndUpdate(req.params.id, updateData, { new: true });
 			product = await updateOneProduct(id, updateData);
-        } //else if (query.item) {
-        //     product = await Product.findOneAndUpdate({ item: query.item }, updateData, { new: true });
-        // }
+        } 
 		// if product is not found message
         if (!product) {
             return res.status(404).json({
@@ -148,11 +144,7 @@ router.delete("/:id", validateUserAuth, async (req, res) => {
         if (id) {
             // Find product by ID
             product = await deleteOneProduct(id);
-        } // else if (item) {
-        //     // Find product by item name
-        //     product = await Product.findOneAndDelete({ item: item });
-        // }
-
+        } 
         if (!product) {
             return res.status(404).json({
                 success: false,
