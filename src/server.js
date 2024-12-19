@@ -13,11 +13,11 @@ const cors = require('cors');
 
 app.use(express.json());
 
-let corsOptions = {
-	origin: ['https://ims-hk.netlify.app/', 'http://localhost:3000'],
-}
-app.use(cors(corsOptions));
-
+// let corsOptions = {
+// 	origin: ['https://ims-hk.netlify.app/', 'http://localhost:3000'],
+// }
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(require('./controllers/UserController'));
 
 
