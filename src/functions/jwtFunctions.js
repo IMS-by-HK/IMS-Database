@@ -27,14 +27,17 @@ function decodeJWT(tokenToDecode){
 }
 
 async function validateUserAuth(request, response, next){
-	let providedToken = request.headers.jwt;
-	console.log(providedToken);
+	const { Authorization } = request.headers;
 
-	if (!providedToken){
+	if (!Authorization){
 		return response.status(403).json({
 			message:"Sign in to view this content!"
 		});
 	}
+
+	const [,providedToken] = Authorization.split(' ');
+
+	console.log(providedToken);
 
 	let decodedData = decodeJWT(providedToken);
 	console.log(decodedData);
