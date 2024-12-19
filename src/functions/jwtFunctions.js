@@ -27,17 +27,18 @@ function decodeJWT(tokenToDecode){
 }
 
 async function validateUserAuth(request, response, next){
-	const { Authorization } = request.headers;
+	console.log(request.headers);
+	const { authorization } = request.headers;
 
-	console.log(Authorization)
+	console.log(authorization)
 
-	if (!Authorization){
+	if (!authorization){
 		return response.status(403).json({
 			message:"No authorization token provided."
 		});
 	}
 
-	const [,providedToken] = Authorization.split(' ');
+	const [,providedToken] = authorization.split(' ');
 
 	console.log(providedToken);
 
