@@ -29,9 +29,11 @@ function decodeJWT(tokenToDecode){
 async function validateUserAuth(request, response, next){
 	const { Authorization } = request.headers;
 
+	console.log(Authorization)
+
 	if (!Authorization){
 		return response.status(403).json({
-			message:"Sign in to view this content!"
+			message:"No authorization token provided."
 		});
 	}
 
