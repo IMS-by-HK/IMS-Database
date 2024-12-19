@@ -12,7 +12,10 @@ const app = express();
 const cors = require('cors');
 
 app.use(express.json());
-app.use(cors());
+let corsOptions = {
+	origin: ['https://ims-hk.netlify.app/', 'http://localhost:3000'],
+}
+app.use(cors(corsOptions));
 app.use(require('./controllers/UserController'));
 
 
@@ -21,13 +24,9 @@ app.use(require('./controllers/UserController'));
 
 app.use(express.json());
 
-// Enables CORS
-// let corsOptions = {
+
 //     //          CRA local                  local 					Vite local              Vite local              Deployed React app
 //     origin: ["http://localhost:3000", "http://localhost:8080", "http://localhost:5173", "http://127.0.0.1:5173","https://ims-hk.netlify.app/"],
-//     optionsSuccessStatus: 200
-// };
-// app.use(cors(corsOptions));
 
 // app.verb(path, callback);
 app.get("/", (request, response) => {
