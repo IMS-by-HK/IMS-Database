@@ -6,6 +6,7 @@ Deployed on Render @:
 [https://ims-backend-2qfp.onrender.com](https://ims-backend-2qfp.onrender.com])
 
 -----
+## Installation/Set up
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
 
@@ -50,7 +51,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
 *mongoose-sequence is a library I installed from the npm site, it lets you add a product number that goes up by 1 for each product created.
 
 ---
-Functionality:
+## Functionality:
 - Product model, schema & controller
     - Add, Update & Delete CRUD operations
     - Requirement fields for name, price, quantity & category
@@ -61,7 +62,7 @@ Functionality:
     - allows logged in users to update & delete products
 
 ----
-Authentication:\
+## Authentication:\
 Models:
 - User model
     - username
@@ -72,7 +73,7 @@ Models:
 - Role model
     - name
 
-Routes: 
+### Routes: 
 - /signup
     - POST 
     - username, password
@@ -92,7 +93,7 @@ Routes:
     - requires a valid JWT header
     - gets one user and returns it
 
-Auth API endpoints:
+### Auth API endpoints:
 - POST: /signup
 - POST: /login
 - GET: /users/:userID
@@ -102,7 +103,7 @@ Auth API endpoints:
 See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
-Product API endpoints:
+### Product API endpoints:
 - GET: /products/search 
 - GET: /products/all - get all products
 - GET: /products/:id - get product by id
@@ -113,13 +114,14 @@ Product API endpoints:
 See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
-Testing:\
+## Testing:\
 Written tests for validation:
 - if all product requirements are provided - success
 - if price is a negative number - fail
 - if quantity is a negative number - fail
 - if category is not provided - fail
 
+![Validation product tests](/docs/Tests/Validation%20product%20tests.png)
 
 [Bruno tests](/docs/Bruno%20Screenshots/):\
 User signup
@@ -150,7 +152,7 @@ Delete product with jwt provided
 ![Delete product with jwt provided](/docs/Bruno%20Screenshots/localhost-%20delete%20product%20with%20jwt.png)
 
 ---
-Techstack:
+## Techstack:
 - Express
 - Mongoose/MongoDB
 - CloudAtlasDB
