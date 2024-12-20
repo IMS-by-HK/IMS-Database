@@ -43,8 +43,11 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
-- [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence): 
+
+- [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence)*: 
     - `npm install --save mongoose-sequence`
+---
+*mongoose-sequence is a library I installed from the npm site, it lets you add a product number that goes up by 1 for each product created.
 
 ---
 Functionality:
@@ -54,7 +57,8 @@ Functionality:
 - User model, schema & controller
     - username & password - password hashed
     - allows signup & login of manager & employees
-    - allows only manager permission to update & delete
+    - allows only manager permission to update & delete users
+    - allows logged in users to update & delete products
 
 ----
 Authentication:\
@@ -116,7 +120,34 @@ Written tests for validation:
 - if quantity is a negative number - fail
 - if category is not provided - fail
 
-Bruno tests:
+
+[Bruno tests](/docs/Bruno%20Screenshots/):\
+User signup
+![User signup](/docs/Bruno%20Screenshots/localhost-use%20signup.png)
+
+User login
+![User login](/docs/Bruno%20Screenshots/localhost-user%20login.png)
+
+Get all products
+![Get all products](/docs/Bruno%20Screenshots/localhost-%20get%20all%20products.png)
+
+Get all products by category
+![Get all products by category](/docs/Bruno%20Screenshots/localhost-%20get%20all%20by%20category.png)
+
+Create product
+![Create product](/docs/Bruno%20Screenshots/localhost-%20create%20product%20with%20jwt%20OR%20auth%20bearer.png)
+
+Update product with no jwt provided
+![Update product with no jwt provided](/docs/Bruno%20Screenshots/localhost-%20update%20product%20with%20no%20jwt.png)
+
+Update product with jwt provided
+![Update product with jwt provided](/docs/Bruno%20Screenshots/localhost-%20update%20product%20with%20jwt.png)
+
+Delete product with no jwt provided
+![Delete product with no jwt provided](/docs/Bruno%20Screenshots/localhost-%20delete%20product%20with%20no%20jwt.png)
+
+Delete product with jwt provided
+![Delete product with jwt provided](/docs/Bruno%20Screenshots/localhost-%20delete%20product%20with%20jwt.png)
 
 ---
 Techstack:

@@ -1,18 +1,18 @@
 meta {
   name: [PROD] User signup
   type: http
-  seq: 10
+  seq: 23
 }
 
 post {
-  url: https://ims-backend-2qfp.onrender.com/users/signup
+  url: http://localhost:8080/users/signup
   body: json
   auth: none
 }
 
 body:json {
   {
-    "username": "example",
+    "username": "Manager8",
     "password": "examplepassword"
   }
 }
