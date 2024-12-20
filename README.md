@@ -5,6 +5,11 @@ Built using Mongoose/MongoDB, ExpressJS, & Nodemon
 Deployed on Render @: 
 [https://ims-backend-2qfp.onrender.com](https://ims-backend-2qfp.onrender.com])
 
+[Presentation](/docs/Presentation/), done on Google Slides:
+- [PDF, with presenter notes](/docs/Presentation/Inventory%20Management_System-with%20presenter%20notes.pdf)
+- [PDF](/docs/Presentation/Inventory%20Management_System.pdf)
+- [GoogleSlides/PowerPoint file](/docs/Presentation/Inventory%20Management_System.pptx)
+
 -----
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
