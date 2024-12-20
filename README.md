@@ -43,6 +43,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
+
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence)*: 
     - `npm install --save mongoose-sequence`
 ---
@@ -118,6 +119,7 @@ Written tests for validation:
 - if price is a negative number - fail
 - if quantity is a negative number - fail
 - if category is not provided - fail
+
 
 [Bruno tests](/docs/Bruno%20Screenshots/):\
 User signup
