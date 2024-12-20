@@ -1,4 +1,4 @@
-# IMS-Database
+# IMS-Database/Backend
 Mongo Database/Backend for Inventory Management System by Hayden & Kate\
 Built using Mongoose/MongoDB, ExpressJS, & Nodemon
 
@@ -43,11 +43,10 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
-
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence): 
     - `npm install --save mongoose-sequence`
 
-
+---
 Functionality:
 - Product model, schema & controller
     - Add, Update & Delete CRUD operations
@@ -89,21 +88,15 @@ Routes:
     - requires a valid JWT header
     - gets one user and returns it
 
-
-<!-- - localhost:3000/users/refresh?
-    - POST
-    - requires a valid JWT header
-    - checks a JWT and provides a new one if it's valid
-    - returns a JWT -->
-
 Auth API endpoints:
 - POST: /signup
 - POST: /login
 - GET: /users/:userID
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
 - DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
-<!-- - POST: /users/refresh -->
+
 See [Bruno file](/docs/Bruno/IMS/) for example
+
 ---
 Product API endpoints:
 - GET: /products/search 
@@ -117,11 +110,14 @@ See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
 Testing:\
-Tests for validation:
+Written tests for validation:
 - if all product requirements are provided - success
 - if price is a negative number - fail
 - if quantity is a negative number - fail
 - if category is not provided - fail
+
+Bruno tests:
+
 ---
 Techstack:
 - Express
