@@ -57,7 +57,7 @@ async function validateUserAuth(request, response, next){
 		next();
 	} else {
 		return response.status(403).json({
-			message:"Sign in to view this content!"
+			message:"No authorization token provided."
 		});
 	}
 }
