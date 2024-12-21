@@ -44,7 +44,6 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
-
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence)*: 
     - `npm install --save mongoose-sequence`
 ---
@@ -67,28 +66,27 @@ Models:
 - User model
     - username
     - password
-    - Roles by ID
-        - manager
-        - employee
-- Role model
-    - name
+    - IsManager: Boolean value
+        - manager: true
+        - employee: false
 
 ### Routes: 
 - /signup
     - POST 
     - username, password
     - creates a new user
+    - password is stored hashed
     - returns a JWT
 - /login
     - POST 
     - username, password
     - chcks provided data against database
     - returns a JWT
-- localhost:3000/users/:userID
+- /users/:userID
     - GET
     - requires a valid JWT header
     - gets one user and returns it
-- localhost:3000/users/:userID
+- /users/:userID
     - GET
     - requires a valid JWT header
     - gets one user and returns it
@@ -97,8 +95,12 @@ Models:
 - POST: /signup
 - POST: /login
 - GET: /users/:userID
+
+These last two functions haven't been implemented into the front-end:*
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
 - DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
+*Included in the backend so can be deleted if needed
+
 
 See [Bruno file](/docs/Bruno/IMS/) for example
 
@@ -114,7 +116,7 @@ See [Bruno file](/docs/Bruno/IMS/) for example
 See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
-## Testing:\
+## Testing:
 Written tests for validation:
 - if all product requirements are provided - success
 - if price is a negative number - fail
