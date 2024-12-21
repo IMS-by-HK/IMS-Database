@@ -15,6 +15,11 @@ Deployed on Render @:
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
 
+Virtual Environment values for .env file:\
+`DATABASE_URL=mongodb+srv://ims-hk:imshk@ims.ln0cl.mongodb.net/?retryWrites=true&w=majority&appName=IMS`
+
+`JWT_SECRET_KEY=kuahjdkjdkjndwkuhdkjb`
+
 To run server:\
 Development mode:`npm run dev`\
 Production mode: `npm run start`
@@ -66,7 +71,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - allows logged in users to update & delete products
 
 ----
-## Authentication:\
+## Authentication:
 Models:
 - User model
     - username
@@ -104,7 +109,7 @@ Models:
 These last two functions haven't been implemented into the front-end:*
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
 - DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
-*Included in the backend so can be deleted if needed
+*Included in the backend so user can be deleted if needed
 
 
 See [Bruno file](/docs/Bruno/IMS/) for example
