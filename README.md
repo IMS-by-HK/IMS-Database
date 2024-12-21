@@ -39,25 +39,43 @@ To drop and seed database:\
 `npm run db:drop-and-seed`
 
 ---
-Initalising/dependencies/devdependencies installed (in order of building):
+Initalising/dependencies/devdependencies for the Back-End installed (in order of building):
 - Node.js:
-    - `npm init -y`
+    - ```npm init -y```
 - Mongoose & Express:
-    - `npm install mongoose express`
+    - ```npm install mongoose express```
 - Nodemon:
-- `npm install --save-dev nodemon`
+- ```npm install --save-dev nodemon```
 - Virtual environment
-    - `npm install dotenv`
+    - ```npm install dotenv```
 - Testing:
-    - `npm i --save-dev jest`
+    - ```npm i --save-dev jest```
 - Authentication & Password hashing:
-    - `npm install jsonwebtoken helmet bcrypt`
+    - ```npm install jsonwebtoken helmet bcrypt```
 - CORS:
-    - `npm install cors`
+    - ```npm install cors```
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence)*: 
-    - `npm install --save mongoose-sequence`
+    - ```npm install --save mongoose-sequence```
 ---
 *mongoose-sequence is a library I installed from the npm site, it lets you add a product number that goes up by 1 for each product created.
+
+Initialising/Dependencies/DevDependencies for the Front-End installed:
+
+- Node.js:
+    - ```npm init -y```
+- React and related packages:
+    - ```npm install axios cra-template react react-dom react-router-dom react-scripts```
+- Babel:
+    - ```npm install @babel/core @babel/preset-env @babel/preset-react```
+- Babel Plugins:
+    - ```npm install @babel/plugin-proposal-private-property-in-object @babel/plugin-transform-private-property-in-object```
+- Testing:
+    - ```npm install @testing-library/jest-dom @testing-library/react babel-jest identity-obj-proxy jest```
+    - For testing, **make sure** to add ```"type": "module"``` to the package.json file and **make sure** to **remove** it once testing is complete.
+
+Once everything is installed for the Front-End, **make sure** to:
+- Add ```"proxy": "http://localhost:3000"``` to the package.json file. Make sure the port you are using is correct.
+- Create a .env file in the root of the folder and add ```REACT_APP_API_URL=https://ims-backend-2qfp.onrender.com``` for the back-end/server to work.
 
 ---
 ## Functionality:
