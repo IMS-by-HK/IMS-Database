@@ -71,7 +71,7 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - allows logged in users to update & delete products
 
 ----
-## Authentication:\
+## Authentication:
 Models:
 - User model
     - username
@@ -109,7 +109,7 @@ Models:
 These last two functions haven't been implemented into the front-end:*
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
 - DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
-*Included in the backend so can be deleted if needed
+*Included in the backend so user can be deleted if needed
 
 
 See [Bruno file](/docs/Bruno/IMS/) for example
