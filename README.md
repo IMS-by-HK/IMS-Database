@@ -11,6 +11,7 @@ Deployed on Render @:
 - [GoogleSlides/PowerPoint file](/docs/Presentation/Inventory%20Management_System.pptx)
 
 -----
+## Installation/Set up
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
 
@@ -48,14 +49,13 @@ Initalising/dependencies/devdependencies installed (in order of building):
     - `npm install jsonwebtoken helmet bcrypt`
 - CORS:
     - `npm install cors`
-
 - [mongoose-sequence](https://www.npmjs.com/package/mongoose-sequence)*: 
     - `npm install --save mongoose-sequence`
 ---
 *mongoose-sequence is a library I installed from the npm site, it lets you add a product number that goes up by 1 for each product created.
 
 ---
-Functionality:
+## Functionality:
 - Product model, schema & controller
     - Add, Update & Delete CRUD operations
     - Requirement fields for name, price, quantity & category
@@ -66,48 +66,51 @@ Functionality:
     - allows logged in users to update & delete products
 
 ----
-Authentication:\
+## Authentication:\
 Models:
 - User model
     - username
     - password
-    - Roles by ID
-        - manager
-        - employee
-- Role model
-    - name
+    - IsManager: Boolean value
+        - manager: true
+        - employee: false
 
-Routes: 
+### Routes: 
 - /signup
     - POST 
     - username, password
     - creates a new user
+    - password is stored hashed
     - returns a JWT
 - /login
     - POST 
     - username, password
     - chcks provided data against database
     - returns a JWT
-- localhost:3000/users/:userID
+- /users/:userID
     - GET
     - requires a valid JWT header
     - gets one user and returns it
-- localhost:3000/users/:userID
+- /users/:userID
     - GET
     - requires a valid JWT header
     - gets one user and returns it
 
-Auth API endpoints:
+### Auth API endpoints:
 - POST: /signup
 - POST: /login
 - GET: /users/:userID
+
+These last two functions haven't been implemented into the front-end:*
 - PATCH: /users/:userID - update user by id - must be logged in as manager to update employee
 - DELETE: /users/:userID - delete user by id - must be logged in as manager to delete employee
+*Included in the backend so can be deleted if needed
+
 
 See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
-Product API endpoints:
+### Product API endpoints:
 - GET: /products/search 
 - GET: /products/all - get all products
 - GET: /products/:id - get product by id
@@ -118,13 +121,14 @@ Product API endpoints:
 See [Bruno file](/docs/Bruno/IMS/) for example
 
 ---
-Testing:\
+## Testing:
 Written tests for validation:
 - if all product requirements are provided - success
 - if price is a negative number - fail
 - if quantity is a negative number - fail
 - if category is not provided - fail
 
+![Validation product tests](/docs/Tests/Validation%20product%20tests.png)
 
 [Bruno tests](/docs/Bruno%20Screenshots/):\
 User signup
@@ -155,7 +159,7 @@ Delete product with jwt provided
 ![Delete product with jwt provided](/docs/Bruno%20Screenshots/localhost-%20delete%20product%20with%20jwt.png)
 
 ---
-Techstack:
+## Techstack:
 - Express
 - Mongoose/MongoDB
 - CloudAtlasDB
