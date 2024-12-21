@@ -15,6 +15,11 @@ Deployed on Render @:
 To install dependencies required:\
 `npm install mongoose express --save-dev nodemon dotenv jsonwebtoken helmet bcrypt cors`
 
+Virtual Environment values for .env file:\
+`DATABASE_URL=mongodb+srv://ims-hk:imshk@ims.ln0cl.mongodb.net/?retryWrites=true&w=majority&appName=IMS`
+
+`JWT_SECRET_KEY=kuahjdkjdkjndwkuhdkjb`
+
 To run server:\
 Development mode:`npm run dev`\
 Production mode: `npm run start`
